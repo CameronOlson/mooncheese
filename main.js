@@ -161,6 +161,10 @@ function startInterval() {
     collectionInterval = setInterval(collectAutoUpgrades, 3000);
   }
 
+
+//   This is to change buttons color on click
+
+
   startInterval()
 
 //   function startGame(){

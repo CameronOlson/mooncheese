@@ -1,7 +1,21 @@
 .tall{
-    height: 20rem;
+    height: 18rem;
 }
 .picture{
-    height: 20rem;
-    width: 15rem;
+    height: 13rem;
+    width: 10rem;
+}
+
+    @media(max-width: 600px){
+    #disappear{
+        display: none;
+    }
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.button-design{
+    border-radius: 2rem;
 }

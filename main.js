@@ -1,4 +1,8 @@
 let cheese = 0
+let pickaxButton = document.getElementById("pickaxButton")
+let shovelButton = document.getElementById("buyShovelButton")
+let spaceCraftButton = document.getElementById("buySpaceCraftButton")
+let roverButton = document.getElementById("buyRoverButton")
 // let pickax = 0
 // let rover = 0
 
@@ -33,6 +37,10 @@ let clickUpgrades = {
 function mine(){
      cheese += (1 + ((clickUpgrades['pickaxes'].quantity * clickUpgrades['pickaxes'].multiplier) + (clickUpgrades['shovel'].quantity * clickUpgrades['shovel'].multiplier)))
     update(onScreenCheeseCount)
+    hidePickaxButton()
+    hideShovelButton()
+    hideSpaceCraftButton()
+    hideRoverButton()
 }
 
 
@@ -104,6 +112,10 @@ function buyPickax(str){
         updatePickax()
         updatePickaxPrice()
         updatePickaxCost()
+        hidePickaxButton()
+        hideShovelButton()
+        hideSpaceCraftButton()
+        hideRoverButton()
         console.log("You bought a pickax")
         console.log(clickUpgrades[str].quantity)
     } 
@@ -117,6 +129,10 @@ function buyShovel(str){
         updateShovel()
         updateShovelPrice()
         updateShovelCost()
+        hidePickaxButton()
+        hideShovelButton()
+        hideSpaceCraftButton()
+        hideRoverButton()
         console.log("You bought a Shovel")
         // console.log(clickUpgrades[str].quantity)
     } 
@@ -133,6 +149,10 @@ function buyRover(str){
         updateRover()
         updateRoverPrice()
         updateRoverCost()
+        hidePickaxButton()
+        hideShovelButton()
+        hideSpaceCraftButton()
+        hideRoverButton()
         console.log("You bought a rover")
         
     } 
@@ -145,6 +165,10 @@ function buySpaceCraft(str){
         updateSpaceCraft()
         updateSpaceCraftPrice()
         updateSpaceCraftCost()
+        hidePickaxButton()
+        hideShovelButton()
+        hideSpaceCraftButton()
+        hideRoverButton()
         console.log("You bought a SpaceCraft")
        
     } 
@@ -162,10 +186,49 @@ function startInterval() {
   }
 
 
-//   This is to change buttons color on click
+//   This is to hide button before it is availible
 
+function hidePickaxButton(){
+    if (cheese < clickUpgrades["pickaxes"].price){
+        document.getElementById("pickaxButton").className = "unclickable";
+    } else if (cheese >= clickUpgrades["pickaxes"].price){ 
+        document.getElementById("pickaxButton").className = "is-visible";
+    }
+}
+function hideShovelButton(){
+    if (cheese < clickUpgrades["shovel"].price){
+        document.getElementById("buyShovelButton").className = "unclickable";
+    } else if (cheese >= clickUpgrades["shovel"].price){ 
+        document.getElementById("buyShovelButton").className = "is-visible"}
+
+}
+
+function hideSpaceCraftButton(){
+    if (cheese < automaticUpgrades["spaceCraft"].price){
+        document.getElementById("buySpaceCraftButton").className = "unclickable";
+    } else if (cheese >= automaticUpgrades["spaceCraft"].price){ 
+        document.getElementById("buySpaceCraftButton").className = "is-visible"}
+}
+
+function hideRoverButton(){
+    if (cheese < automaticUpgrades["rovers"].price){
+        document.getElementById("buyRoverButton").className = "unclickable";
+    } else if (cheese >= automaticUpgrades["rovers"].price){ 
+        document.getElementById("buyRoverButton").className = "is-visible";
+    return
+    }
+}
+function hideButtons(){
+  document.getElementById("pickaxButton").className = "is-hidden";
+  document.getElementById("buyShovelButton").className = "is-hidden";
+  document.getElementById("buySpaceCraftButton").className = "is-hidden";
+  document.getElementById("buyRoverButton").className = "is-hidden";
+}
 
   startInterval()
+  hideButtons()
+ 
+
 
 //   function startGame(){
 

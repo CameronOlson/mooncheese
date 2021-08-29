@@ -35,24 +35,35 @@
         <div class="row" id="disappear">
                 <h1 id="dissapear">Purchase Upgrades</h1>
         </div>
-        <div class="row ">
-            <div class="col-12 col-lg-6 tall">
-                <button class="btn btn-dark button-design m-1" onclick="buyPickax('pickaxes')">
+        <div class="row">
+            <div class="col-12 col-lg-4 d-flex justify-content-around pt-3">
+                <div>
+                <button class="btn p-3" id="pickaxButton" onclick="buyPickax('pickaxes')">
                     <div>Pickaxes<h3 id="pickaxCount">0</h3></div>
                     <div>Cost:<h4 id="pickaxCost">10</h4></div>   
                 </button>
-                <button class="btn btn-dark button-design m-1" onclick="buyShovel('shovel')">
+                </div>
+                <div>
+                <button class="btn m-5" id="buyShovelButton" onclick="buyShovel('shovel')">
                     <div>Shovels<h3 id="shovelCount">0</h3></div>
                     <div>Cost:<h4 id="shovelCost">15</h4></div>
                 </button>
-                <button class="btn btn-dark button-design m-1" onclick="buySpaceCraft('spaceCraft')">
-                    <div>Spacecraft<h3 id="spaceCraftCount">0</h3></div>
-                    <div>Cost:<h4 id="spaceCraftCost">30</h4></div>
-                </button>
-                <button class="btn btn-dark button-design m-1" onclick="buyRover('rovers')">
+            </div>    
+            </div>
+            <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4 d-flex justify-content-around pt-3">
+                    <div>
+                <button class="btn" id="buyRoverButton" onclick="buyRover('rovers')">
                     <div>Rovers<h3 id="roverCount">0</h3></div>
                     <div>Cost:<h4 id="roverCost">20</h4></div>
                 </button>
+                </div>
+                    <div>
+                    <button class="btn" id="buySpaceCraftButton" onclick="buySpaceCraft('spaceCraft')">
+                        <div>Spacecraft<h3 id="spaceCraftCount">0</h3></div>
+                        <div>Cost:<h4 id="spaceCraftCost">30</h4></div>
+                    </div>
+                    </button>
             </div>
                 <div class="col-12 col-lg-6 text-center">
                 </div>

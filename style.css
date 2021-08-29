@@ -11,11 +11,31 @@
         display: none;
     }
 }
+.is-hidden{
+display: none;
+}
+
+.unclickable{
+    display: block;
+
+height: 10rem;
+width: 6rem;
+background-color: rgb(170, 67, 49);
+opacity: 50%;
+}
+.is-visible{
+display: block;
+
+height: 10rem;
+width: 6rem;
+background-color: rgb(170, 67, 49);
+opacity: 100%;
+}
 
 .bg-black{
     background-color: black;
 }
 
 .button-design{
-    border-radius: 2rem;
+    border-radius: 3rem;
 }

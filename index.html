@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     
 </head>
 <body>
     <header>
-        <div class="container-fluid text-light bg-black text-center">
+        <div class="container-fluid my-font bg-black text-center">
             <div class="row">
                 <div class="col">
-                    <div><h1>MoonCheese</h1></div>
+                    <div><h1 class="my-font">Mine the Moon</h1></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1 id="onScreenCheeseCount">Cheese Count</h1>
+                <div class="col-12 text-center my-font">
+                    <h3 id="onScreenCheeseCount">Progress!</h3>
                 </div>
             </div>
-            <div class="row">
+            <div class="row my-font">
                 <div class="col-6 py-5 d-flex justify-content-around">
                     <div class="multiplyer"><h6>CLICK +</h6><h3 id="multiplyer"></h3></div>
                 </div>
@@ -31,11 +34,11 @@
                 </div>
         </div>
     </header>
-    <div class="container-fluid text-light bg-black">
-        <div class="row">
+    <div class="container-fluid my-font bg-black">
+        <div class="row pb-5">
                 <div class="col-4"></div>
                 <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div onclick="mine()"><img class="picture" src="https://images.unsplash.com/photo-1531524029500-717e4baed928?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fG1vb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt=""></div>
+                    <div onclick="mine()"><img class="picture" src="data:image/jpeg;base64,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" alt=""></div>
                 </div>
                 <div class="col-4"></div>
             </div>

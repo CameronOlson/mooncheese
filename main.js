@@ -3,6 +3,8 @@ let pickaxButton = document.getElementById("pickaxButton")
 let shovelButton = document.getElementById("buyShovelButton")
 let spaceCraftButton = document.getElementById("buySpaceCraftButton")
 let roverButton = document.getElementById("buyRoverButton")
+let multiplyer = document.getElementById("multiplyer")
+let passiveIncome = document.getElementById("passiveIncome")
 // let pickax = 0
 // let rover = 0
 
@@ -47,6 +49,16 @@ function mine(){
 
 function update(onScreenCheeseCount){
     onScreenCheeseCount = document.getElementById("onScreenCheeseCount").innerText = cheese
+}
+
+function updateMultiplyer(){
+    multiplyer = 1 + ((clickUpgrades["pickaxes"].quantity * clickUpgrades["pickaxes"].multiplier) + (clickUpgrades["shovel"].quantity * clickUpgrades["shovel"].multiplier))
+    document.getElementById("multiplyer").innerText = multiplyer
+
+}
+function updatePassiveIncome(){
+    passiveIncome =  ((automaticUpgrades["rovers"].quantity * automaticUpgrades["rovers"].multiplier)+(automaticUpgrades["spaceCraft"].quantity * automaticUpgrades["spaceCraft"].multiplier))
+    document.getElementById("passiveIncome").innerText = passiveIncome
 }
 
 
@@ -116,6 +128,7 @@ function buyPickax(str){
         hideShovelButton()
         hideSpaceCraftButton()
         hideRoverButton()
+        updateMultiplyer()
         console.log("You bought a pickax")
         console.log(clickUpgrades[str].quantity)
     } 
@@ -133,6 +146,7 @@ function buyShovel(str){
         hideShovelButton()
         hideSpaceCraftButton()
         hideRoverButton()
+        updateMultiplyer()
         console.log("You bought a Shovel")
         // console.log(clickUpgrades[str].quantity)
     } 
@@ -153,6 +167,7 @@ function buyRover(str){
         hideShovelButton()
         hideSpaceCraftButton()
         hideRoverButton()
+        updatePassiveIncome()
         console.log("You bought a rover")
         
     } 
@@ -169,6 +184,7 @@ function buySpaceCraft(str){
         hideShovelButton()
         hideSpaceCraftButton()
         hideRoverButton()
+        updatePassiveIncome()
         console.log("You bought a SpaceCraft")
        
     } 
@@ -184,6 +200,8 @@ let collectionInterval
 function startInterval() {
     collectionInterval = setInterval(collectAutoUpgrades, 3000);
   }
+
+
 
 
 //   This is to hide button before it is availible
@@ -218,6 +236,9 @@ function hideRoverButton(){
     return
     }
 }
+
+
+
 function hideButtons(){
   document.getElementById("pickaxButton").className = "is-hidden";
   document.getElementById("buyShovelButton").className = "is-hidden";

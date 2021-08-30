@@ -11,25 +11,34 @@
         display: none;
     }
 }
+
 .is-hidden{
 display: none;
+}
+.multiplyer{
+    display: block;
+    /* border-block: solid; */
+    height: 4rem;
+    width: 5rem;
+    background-color: black;
 }
 
 .unclickable{
     display: block;
-
+border-radius: 20%;
 height: 10rem;
 width: 6rem;
-background-color: rgb(170, 67, 49);
+background-color: rgb(71, 71, 71);
 opacity: 50%;
 }
 .is-visible{
 display: block;
-
+border-radius: 20%;
 height: 10rem;
 width: 6rem;
-background-color: rgb(170, 67, 49);
+background-color: rgb(59, 59, 59);
 opacity: 100%;
+color: honeydew;
 }
 
 .bg-black{
